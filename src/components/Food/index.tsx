@@ -30,7 +30,7 @@ const Food: React.FC<IProps> = ({
   async function toggleAvailable(): Promise<void> {
     try {
       const available = !isAvailable;
-      await api.patch(`/foods/${food.id}`, { available });
+      await api.put(`/foods/${food.id}`, { available });
       setIsAvailable(available);
     } catch (error) {
       // eslint-disable-next-line no-console
